@@ -30,7 +30,7 @@ public class DoAddLicitatieServlet extends HttpServlet {
         String ora = request.getParameter("ora");
        
         String updateSQL = "insert into manager_licitatii.licitatii " +
-                "values(default, ?, to_date(?, 'dd.mm.yyyy'), ?);";
+                "values(default, ?, str_to_date(?, '%d-%m-%Y'), ?, default );";
         try {
             pstm = conn.prepareStatement(updateSQL);
 
@@ -52,13 +52,13 @@ public class DoAddLicitatieServlet extends HttpServlet {
         if(hasError) {
             request.setAttribute("errorString", errorString);
             
-            dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/addProdusView.jsp");
+            dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/addLicitatieView.jsp");
         }
         else {
             succesString = "Adaugare cu succes!";
             //trimite si id-ul licitatiei
             request.setAttribute("succesString", succesString);
-            dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/addProdusView.jsp");
+            dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/addLicitatieView.jsp");
         }
 
         dispatcher.forward(request, response);

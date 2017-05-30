@@ -16,7 +16,7 @@
         <br/>
         Data licitatie(dd.mm.yyyy) <input type="text" name="data_licitatie">
         <br/>
-        Ora: <input type="text" name="nume_vanzator">
+        Ora: <input type="text" name="ora">
         <br/>
         <input type="submit" name="submit">
     </form>
