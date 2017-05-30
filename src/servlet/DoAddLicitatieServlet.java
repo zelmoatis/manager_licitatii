@@ -30,7 +30,7 @@ public class DoAddLicitatieServlet extends HttpServlet {
         String ora = request.getParameter("ora");
        
         String updateSQL = "insert into manager_licitatii.licitatii " +
-                "values(default, ?, str_to_date(?, '%d-%m-%Y'), ?, default );";
+                "values(default, ?, ?, ?, default );";
         try {
             pstm = conn.prepareStatement(updateSQL);
 
