@@ -12,4 +12,6 @@
    <a href="${pageContext.request.contextPath}/logout">Logout</a>
    |
    <a href="${pageContext.request.contextPath}/addProdus">Add Produs</a>
+   |
+   <a href="${pageContext.request.contextPath}/addLicitatie">Add Licitatie</a>
 </div>  

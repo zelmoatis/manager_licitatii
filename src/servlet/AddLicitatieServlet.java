@@ -13,8 +13,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
-@WebServlet(name = "AddProdusServlet", urlPatterns = {"/addProdus"})
-public class AddProdusServlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/addLicitatie"})
+public class AddLicitatieServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
@@ -31,7 +31,7 @@ public class AddProdusServlet extends HttpServlet {
 
         request.setAttribute("user", loginedUser);
 
-        RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/addProdusView.jsp");
+        RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/addLicitatieView.jsp");
 
         dispatcher.forward(request, response);
     }

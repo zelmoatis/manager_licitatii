@@ -4,9 +4,7 @@ package beans;
 
 public class Licitatie {
     
-    private int id_produs;
-    private int id_bidder;
-    private int pret_curent;
+    private int id_licitatie;
     private double min_increment;
     private String data_licitatie;
     private int ora;
@@ -15,26 +13,16 @@ public class Licitatie {
     public Licitatie() {
     }
 
-    public Licitatie(int id_produs, int id_bidder, int pret_curent,  String data_licitatie, int ora ) {
-        this.id_produs = id_produs;
-        this.id_bidder = id_bidder;
-        this.pret_curent = pret_curent;
+    public Licitatie(int id_licitatie, String data_licitatie, int ora ) {
+        this.id_licitatie = id_licitatie;
         this.min_increment = 0.05;
         this.data_licitatie = data_licitatie;
         this.ora = ora;
         this.activa = false;
     }
 
-    public int getId_produs() {
-        return id_produs;
-    }
-
-    public int getId_bidder() {
-        return id_bidder;
-    }
-
-    public int getPret_curent() {
-        return pret_curent;
+    public int getId_licitatie() {
+        return id_licitatie;
     }
 
     public double getMin_increment() {
@@ -53,16 +41,8 @@ public class Licitatie {
         return activa;
     }
 
-    public void setId_produs(int id_produs) {
-        this.id_produs = id_produs;
-    }
-
-    public void setId_bidder(int id_bidder) {
-        this.id_bidder = id_bidder;
-    }
-
-    public void setPret_curent(int pret_curent) {
-        this.pret_curent = pret_curent;
+    public void setId_licitatie(int id_licitatie) {
+        this.id_licitatie = id_licitatie;
     }
 
     public void setMin_increment(int min_increment) {
