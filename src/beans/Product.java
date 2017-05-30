@@ -7,16 +7,18 @@ public class Product {
    private int pret_pornire;
    private String nume_vanzator;
    private String poza;
-
+   private int id_licitatie;
+   private int id_bidder;
     public Product() {
     }
 
-    public Product(int id_produs, String nume, int pret_pornire, String nume_vanzator, String poza) {
+    public Product(int id_produs, String nume, int pret_pornire, String nume_vanzator, String poza, int id_licitatie) {
         this.id_produs = id_produs;
         this.nume = nume;
         this.pret_pornire = pret_pornire;
         this.nume_vanzator = nume_vanzator;
         this.poza = poza;
+        this.id_licitatie = id_licitatie;
     }
 
     public int getId_produs() {
@@ -57,6 +59,22 @@ public class Product {
 
     public void setPoza(String poza) {
         this.poza = poza;
+    }
+
+    public int getId_licitatie() {
+        return id_licitatie;
+    }
+
+    public int getId_bidder() {
+        return id_bidder;
+    }
+
+    public void setId_licitatie(int id_licitatie) {
+        this.id_licitatie = id_licitatie;
+    }
+
+    public void setId_bidder(int id_bidder) {
+        this.id_bidder = id_bidder;
     }
    
    

@@ -20,6 +20,8 @@
         <br/>
         Calea catre poza: <input type="text" name="poza">
         <br/>
+        Id licitatie : <input type="text" name="id_licitatie">
+        <br/>
         <input type="submit" name="submit">
     </form>
 

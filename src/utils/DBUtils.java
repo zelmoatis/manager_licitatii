@@ -60,7 +60,7 @@ public class DBUtils {
   }
  
   public static List<Product> queryProduct(Connection conn) throws SQLException {
-      String sql = "Select a.id_produs, a.nume, a.pret_pornire, a.nume_vanzator, a.poza from produse a ";
+      String sql = "Select a.id_produs, a.nume, a.pret_pornire, a.nume_vanzator, a.poza,a.id_licitatie, a.id_bidder from produse a ";
  
       PreparedStatement pstm = conn.prepareStatement(sql);
  
@@ -72,19 +72,25 @@ public class DBUtils {
           int pret_pornire = rs.getInt("pret_pornire");
           String nume_vanzator = rs.getString("nume_vanzator");
           String poza = rs.getString("poza");
+          int id_licitatie = rs.getInt("id_licitatie");
+          int id_bidder = rs.getInt("id_bidder");
+          
+          
           Product product = new Product();
           product.setId_produs(pret_pornire);
           product.setNume(nume);
           product.setPret_pornire(pret_pornire);
           product.setNume_vanzator(nume_vanzator);
           product.setPoza(poza);
+          product.setId_licitatie(id_licitatie);
+          product.setId_licitatie(id_licitatie);
           list.add(product);
       }
       return list;
   }
  
   public static Product findProduct(Connection conn, String code) throws SQLException {
-      String sql = "Select a.id_produs, a.nume, a.pret_pornire, a.nume_vanzator, a.poza from Product a where a.id_produs=?";
+      String sql = "Select a.id_produs, a.nume, a.pret_pornire, a.nume_vanzator, a.poza,a.id_licitatie, a.id_bidder from produse a ";
  
       PreparedStatement pstm = conn.prepareStatement(sql);
       pstm.setString(1, code);
@@ -96,14 +102,16 @@ public class DBUtils {
           int pret_pornire = rs.getInt("pret_pornire");
           String nume_vanzator = rs.getString("nume_vanzare");
           String poza = rs.getString("poza");
-          Product product = new Product(Integer.parseInt(code), nume, pret_pornire, nume_vanzator, poza);
+          int id_licitatie = rs.getInt("id_licitatie");
+          int id_bidder = rs.getInt("id_bidder");
+          Product product = new Product(Integer.parseInt(code), nume, pret_pornire, nume_vanzator, poza,id_licitatie);
           return product;
       }
       return null;
   }
  
   public static void updateProduct(Connection conn, Product product) throws SQLException {
-      String sql = "Update Product set nume =?, pret_pornire =?, nume_vanzator =?, poza =? where id_produs=? ";
+      String sql = "Update Product set nume =?, pret_pornire =?, nume_vanzator =?, poza =?, id_licitatie =?, id_bidder =? where id_produs=? ";
  
       PreparedStatement pstm = conn.prepareStatement(sql);
  
@@ -112,19 +120,23 @@ public class DBUtils {
       pstm.setString(3, product.getNume_vanzator());
       pstm.setString(4, product.getPoza());
       pstm.setInt(5, product.getId_produs());
+      pstm.setInt(6, product.getId_licitatie());
+      pstm.setInt(7, product.getId_bidder());
       pstm.executeUpdate();
   }
  
   public static void insertProduct(Connection conn, Product product) throws SQLException {
-      String sql = "Insert into Product(id_produs, nume, pret_pornire, nume_vanzator, poza) values (?,?,?,?,?)";
+      String sql = "Insert into Product(id_produs, nume, pret_pornire, nume_vanzator, poza, id_licitatie, id_bidder) values (?,?,?,?,?)";
  
       PreparedStatement pstm = conn.prepareStatement(sql);
  
       pstm.setInt(1, product.getId_produs());
       pstm.setString(2, product.getNume());
-      pstm.setDouble(3, product.getPret_pornire());
+      pstm.setInt(3, product.getPret_pornire());
       pstm.setString(4, product.getNume_vanzator());
       pstm.setString(5, product.getPoza());
+      pstm.setInt(6, product.getId_licitatie());
+      pstm.setInt(7, product.getId_bidder());
  
       pstm.executeUpdate();
   }

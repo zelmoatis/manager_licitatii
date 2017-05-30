@@ -29,9 +29,9 @@ public class DoAddProdusServlet extends HttpServlet {
         String pret_pornire = request.getParameter("pret_pornire");
         String nume_vanzator = request.getParameter("nume_vanzator");
         String poza = request.getParameter("poza");
-
+        String id_licitatie = request.getParameter("id_licitatie");
         String updateSQL = "insert into manager_licitatii.produse " +
-                "values(default, ?, ?, ?, ?);";
+                "values(default, ?, ?, ?, ?,?,null);";
         try {
             pstm = conn.prepareStatement(updateSQL);
 
@@ -39,6 +39,7 @@ public class DoAddProdusServlet extends HttpServlet {
             pstm.setString(2, pret_pornire);
             pstm.setString(3, nume_vanzator);
             pstm.setString(4, poza);
+            pstm.setString(5, id_licitatie);
 
             pstm.executeUpdate();
         }
