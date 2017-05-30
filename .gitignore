@@ -1,3 +1,4 @@
 /nbproject/private/
 /nbbuild/
 /dist/
+src/conn/MySQLConnUtils.java

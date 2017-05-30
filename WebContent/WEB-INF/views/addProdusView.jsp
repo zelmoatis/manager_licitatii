@@ -5,7 +5,10 @@
     <title>Add Produs</title>
 </head>
 <body>
-    <p>Hello: ${user.user_name}</p>
+    
+
+     <jsp:include page="_header.jsp"></jsp:include>
+     <jsp:include page="_loggedmenu.jsp"></jsp:include>
 
     Adaugati produsele:
     <form action="doAddProdus" method="post">
@@ -22,5 +25,6 @@
 
     <p>${succesString}</p>
     <p>${errorString}</p>
+      <jsp:include page="_footer.jsp"></jsp:include>
 </body>
 </html>
