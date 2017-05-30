@@ -64,5 +64,8 @@ public class MyUtils {
        cookieUserName.setMaxAge(0);
        response.addCookie(cookieUserName);
    }
+   public static void deleteUserSession(HttpSession session){
+       session.removeAttribute("loginedUser");
+   }
  
 }
