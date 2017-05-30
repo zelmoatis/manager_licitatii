@@ -10,13 +10,12 @@
  <body>
  
     <jsp:include page="_header.jsp"></jsp:include>
-    <jsp:include page="_menu.jsp"></jsp:include>
+    <jsp:include page="_loggedmenu.jsp"></jsp:include>
  
-    <h3>Hello: ${user.userName}</h3>
+    <h3>Hello: ${user.user_name}</h3>
  
-    User Name: <b>${user.userName}</b>
+    User Name: <b>${user.user_name}</b>
     <br />
-    Gender: ${user.gender } <br />
     <c:if test = "${user.admin}">
     	Administrator
     </c:if>

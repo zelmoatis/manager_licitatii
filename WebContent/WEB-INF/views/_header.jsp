@@ -6,7 +6,7 @@
   </div>
  
   <div style="position: relative; top: -80px; padding: 10px; text-align: right;">
- 	Hello <b>${loginedUser.userName}</b>
+ 	Hello <b>${user.user_name}</b>
    <br/>
      Search <input name="search">
  
