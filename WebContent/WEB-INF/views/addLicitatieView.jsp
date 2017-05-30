@@ -14,7 +14,7 @@
     <form action="doAddLicitatie" method="post">
         Increment minim: <input type="text" name="min_increment">
         <br/>
-        Data licitatie(dd.mm.yyyy) <input type="text" name="data_licitatie">
+        Data licitatie(dd-mm-yyyy) <input type="text" name="data_licitatie">
         <br/>
         Ora: <input type="text" name="ora">
         <br/>
