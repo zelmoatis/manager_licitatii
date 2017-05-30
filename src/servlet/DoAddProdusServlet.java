@@ -14,9 +14,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
- * Created by bujor on 30.05.2017.
- */
+
 @WebServlet(name = "DoAddProdusServlet", urlPatterns = {"/doAddProdus"})
 public class DoAddProdusServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
