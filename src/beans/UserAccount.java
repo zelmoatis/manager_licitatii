@@ -2,48 +2,54 @@ package beans;
 
 public class UserAccount {
 	 
-   public static final String GENDER_MALE ="M";
-   public static final String GENDER_FEMALE = "F";
-    
-   private String userName;
-   private String gender;
-   private String password;
+   private int id_user;
+   private String user_name;
+   private String parola;
    private Boolean admin = false;
- 
-   public UserAccount() {
-        
-   }
-    
-   public String getUserName() {
-       return userName;
-   }
- 
-   public void setUserName(String userName) {
-       this.userName = userName;
-   }
- 
-   public String getGender() {
-       return gender;
-   }
- 
-   public void setGender(String gender) {
-       this.gender = gender;
-   }
- 
-   public String getPassword() {
-       return password;
-   }
- 
-   public void setPassword(String password) {
-       this.password = password;
-   }
+
+    public UserAccount() {
+    }
+
+    public UserAccount(int id_user, String user_name, String parola) {
+        this.id_user = id_user;
+        this.user_name = user_name;
+        this.parola = parola;
+    }
+
+    public int getId_user() {
+        return id_user;
+    }
+
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public String getParola() {
+        return parola;
+    }
+
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
+    }
+
+    public void setParola(String parola) {
+        this.parola = parola;
+    }
+
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
+    }
    
-   public Boolean getAdmin(){
-	   return admin;
-   }
+  
+ 
    
-   public void makeAdmin(){
-	   this.admin = true;
-   }
 	 
 }

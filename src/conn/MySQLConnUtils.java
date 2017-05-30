@@ -10,9 +10,9 @@ public static Connection getMySQLConnection()
         throws ClassNotFoundException, SQLException {
   
     String hostName = "localhost";
-    String dbName = "test_site";
-    String userName = "dbmanager";
-    String password = "managerpass";
+    String dbName = "manager_licitatii";
+    String userName = "root";
+    String password = "root";
     return getMySQLConnection(hostName, dbName, userName, password);
 }
  

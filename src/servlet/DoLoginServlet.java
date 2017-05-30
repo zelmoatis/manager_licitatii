@@ -61,8 +61,8 @@ public class DoLoginServlet extends HttpServlet {
         
        if (hasError) {
             user = new UserAccount();
-            user.setUserName(userName);
-            user.setPassword(password);
+            user.setUser_name(userName);
+            user.setParola(password);
              
         
             request.setAttribute("errorString", errorString);
