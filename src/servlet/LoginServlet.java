@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import beans.UserAccount;
+import utils.MyUtils;
  
 @WebServlet(urlPatterns = { "/login"})
 public class LoginServlet extends HttpServlet {
@@ -20,10 +24,21 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    	
+    	HttpSession session = request.getSession();
+    	 
+    	 
+        UserAccount loginedUser = MyUtils.getLoginedUser(session);
  
-         
-        RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/loginView.jsp");
-         
+  
+        if (loginedUser == null) {
+       
+        	RequestDispatcher dispatcherr = this.getServletContext().getRequestDispatcher("/WEB-INF/views/loginView.jsp");
+            dispatcherr.forward(request, response);
+        }
+  
+        request.setAttribute("user", loginedUser);
+    	RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/userInfoView.jsp");
         dispatcher.forward(request, response);
          
     }
