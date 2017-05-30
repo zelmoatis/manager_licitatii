@@ -19,11 +19,11 @@
        <table border="0">
           <tr>
              <td>User Name</td>
-             <td><input type="text" name="userName" value= "${user.userName}" /> </td>
+             <td><input type="text" name="userName" value= "${user.user_name}" /> </td>
           </tr>
           <tr>
              <td>Password</td>
-             <td><input type="password" name="password" value= "${user.password}" /> </td>
+             <td><input type="password" name="password" value= "${user.parola}" /> </td>
           </tr>
           <tr>
              <td>Remember me</td>

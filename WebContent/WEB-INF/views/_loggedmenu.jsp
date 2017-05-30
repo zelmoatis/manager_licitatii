@@ -10,5 +10,6 @@
    <a href="${pageContext.request.contextPath}/userInfo">My Account Info</a>
    |
    <a href="${pageContext.request.contextPath}/logout">Logout</a>
-    
+   |
+   <a href="${pageContext.request.contextPath}/addProdus">Add Produs</a>
 </div>  
