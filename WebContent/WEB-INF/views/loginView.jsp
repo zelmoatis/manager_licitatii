@@ -38,8 +38,6 @@
        </table>
     </form>
  
-    <!-- User Name: tom, password: tom001 or jerry/jerry001  -->
- 
     <jsp:include page="_footer.jsp"></jsp:include>
  
  </body>
